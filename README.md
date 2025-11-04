@@ -1,4 +1,4 @@
-A small todo example using @kanian77/tsject
+A small todo example using @kanian77/tject
 
 ## To install dependencies:
 ```sh
