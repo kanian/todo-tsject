@@ -17,7 +17,7 @@ import {
 } from './use-cases/list-all-tasks/ListAllTasksRoute';
 import { ListAllTasksModule } from './use-cases/list-all-tasks/ListAllTasksModule';
 
-export const HONO_APP = Symbol('HonoApp');
+export const APP = Symbol('HonoApp');
 const hono = new Hono();
 // The route to AddTask use case
 const addTaskRoute = inject<AddTaskRoute>(ADD_TASK_ROUTE_TOKEN);
@@ -28,7 +28,7 @@ hono.route(completeTaskRoute.routePath, completeTaskRoute.route);
 // The route to ListAllTasks use case
 const listAllTasksRoute = inject<ListAllTasksRoute>(LIST_ALL_TASKS_ROUTE_TOKEN);
 hono.route(listAllTasksRoute.routePath, listAllTasksRoute.route);
-export const HonoModule = new Module({
+export const AppModule = new Module({
   imports: [
     { module: AddTaskModule },
     { module: CompleteTaskModule },
@@ -36,7 +36,7 @@ export const HonoModule = new Module({
   ],
   providers: [
     {
-      provide: HONO_APP,
+      provide: APP,
       useValue: hono,
     },
   ],
