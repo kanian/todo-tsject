@@ -1,6 +1,4 @@
 import {
-  afterAll,
-  afterEach,
   beforeAll,
   beforeEach,
   describe,
@@ -11,8 +9,16 @@ import { TO_DO_SERVICE_TOKEN, ToDoService } from './ToDoService';
 import { bootstrap, inject, Module } from '@kanian77/tject';
 import { TO_DO_REPOSITORY_TOKEN } from './ToDoRepository';
 import { MockToDoRepository } from './MockToDoRepository';
-import { IToDoRepository } from './IToDoRepository';
 import { ToDo } from './ToDo';
+
+/**
+ * NOTE: To test in Bun or Node.js you might have to do something like:
+ *   bun run build && bun test "[/full/path/to]/dist/core/todo/ToDoService.spec.js"
+ *
+ *   For Node.js (v20+ recommended):
+ *   npm run build && node --test dist/core/todo/ToDoService.spec.js
+ *   Deno users should be able to run the tests directly
+ */
 
 describe('ToDoService', () => {
   let toDoService: ToDoService;
