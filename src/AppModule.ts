@@ -10,7 +10,6 @@ import {
   CompleteTaskRoute,
 } from './use-cases/complete-task/CompleteTaskRoute';
 import { CompleteTaskModule } from './use-cases/complete-task/CompleteTaskModule';
-import { ListAllTasks } from './use-cases/list-all-tasks/ListAllTasks';
 import {
   LIST_ALL_TASKS_ROUTE_TOKEN,
   ListAllTasksRoute,

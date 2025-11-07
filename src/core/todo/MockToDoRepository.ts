@@ -46,13 +46,6 @@ export class MockToDoRepository implements IToDoRepository {
     this.findOne.mockClear();
     this.findAll.mockClear();
     this.delete.mockClear();
-
-    // You could also reset implementations/return values if you set defaults
-    // this.create.mockReset();
-    // this.update.mockReset();
-    // this.findOne.mockReset();
-    // this.findAll.mockReset();
-    // this.delete.mockReset();
   }
 }
 
