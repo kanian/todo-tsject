@@ -5,9 +5,7 @@ import { UseCase } from '../UseCase';
 export const ADD_TASK_TOKEN = 'AddTask';
 @Service({ token: ADD_TASK_TOKEN, lifecycle: 'transient' })
 export class AddTask extends UseCase {
-  constructor(
-    private toDoService: IToDoService,
-  ) {
+  constructor(private toDoService: IToDoService) {
     super();
   }
   execute({ task }: { task: string }) {
